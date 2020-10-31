@@ -28,7 +28,8 @@
   "homepage": "https://github.com/esthor/react-native-swipeable-list#readme",
   "peerDependencies": {
     "react": ">=16.11.0",
-    "react-native": ">=0.61.4"
+    "react-native": ">=0.61.4",
+    "react-navigation": "^4.4.0"
   },
   "devDependencies": {
     "metro-react-native-babel-preset": "^0.57.0",
