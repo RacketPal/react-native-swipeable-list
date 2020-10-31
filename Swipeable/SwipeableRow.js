@@ -162,7 +162,10 @@ class SwipeableRow extends React.Component {
         this._animateBounceBack(ON_MOUNT_BOUNCE_DURATION);
       }, ON_MOUNT_BOUNCE_DELAY);
     }
-    if (this.props.swipeBack) {
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.swipeBack !== this.props.swipeBack) {
       this._animateBounceBack(50);
     }
   }

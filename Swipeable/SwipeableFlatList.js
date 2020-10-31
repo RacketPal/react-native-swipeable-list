@@ -76,9 +76,6 @@ class SwipeableFlatList extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps.isFocused !== this.props.isFocused) {
       this.setState({ swipeBack: true });
-      console.log("HEREEEEE");
-      // Use the `this.props.isFocused` boolean
-      // Call any action
     }
   }
 
