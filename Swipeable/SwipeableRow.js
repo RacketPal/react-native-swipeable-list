@@ -164,12 +164,6 @@ class SwipeableRow extends React.Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.swipeBack !== this.props.swipeBack) {
-      this._animateBounceBack(50);
-    }
-  }
-
   UNSAFE_componentWillReceiveProps(nextProps) {
     /**
      * We do not need an "animateOpen(noCallback)" because this animation is

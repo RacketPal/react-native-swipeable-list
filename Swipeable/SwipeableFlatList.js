@@ -61,21 +61,24 @@ class SwipeableFlatList extends React.Component {
     ...FlatList.defaultProps,
     bounceFirstRowOnMount: true,
     renderQuickActions: () => null,
+    closeAnimation: () => null,
   };
 
   constructor(props, context) {
     super(props, context);
     this.state = {
       openRowKey: null,
-      swipeBack: false,
     };
 
     this._shouldBounceFirstRowOnMount = this.props.bounceFirstRowOnMount;
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.isFocused !== this.props.isFocused) {
-      this.setState({ swipeBack: true });
+    if (prevProps.selectedQuickActions !== this.props.selectedQuickActions) {
+      this.setState({
+        openRowKey: null,
+      });
+      this.props.closeAnimation();
     }
   }
 
@@ -131,7 +134,6 @@ class SwipeableFlatList extends React.Component {
         onSwipeEnd={this._setListViewScrollable}
         onSwipeStart={this._setListViewNotScrollable}
         disabled={disabled}
-        swipeBack={this.state.swipeBack}
       >
         {this.props.renderItem(info)}
       </SwipeableRow>
