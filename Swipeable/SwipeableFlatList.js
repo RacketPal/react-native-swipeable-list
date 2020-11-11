@@ -78,6 +78,7 @@ class SwipeableFlatList extends React.Component {
       this.setState({
         openRowKey: null,
       });
+      // for closeAnimation
       this.props.closeAnimation();
     }
   }
