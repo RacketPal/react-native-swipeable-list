@@ -112,7 +112,6 @@ class SwipeableFlatList extends React.Component {
     const slideoutView = this.props.renderQuickActions(info);
     const key = this.props.keyExtractor(info.item, info.index);
     // disabled swipe card
-    // const disabled = info.item.removedFromChat;
     const disabled = false;
     // If renderQuickActions is unspecified or returns falsey, don't allow swipe
     if (!slideoutView) {
