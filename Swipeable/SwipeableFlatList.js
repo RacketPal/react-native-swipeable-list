@@ -78,6 +78,7 @@ class SwipeableFlatList extends React.Component {
       this.setState({
         openRowKey: null,
       });
+      // for closeAnimation
       this.props.closeAnimation();
     }
   }
@@ -111,7 +112,8 @@ class SwipeableFlatList extends React.Component {
     const slideoutView = this.props.renderQuickActions(info);
     const key = this.props.keyExtractor(info.item, info.index);
     // disabled swipe card
-    const disabled = info.item.removedFromChat;
+    // const disabled = info.item.removedFromChat;
+    const disabled = false;
     // If renderQuickActions is unspecified or returns falsey, don't allow swipe
     if (!slideoutView) {
       return this.props.renderItem(info);
