@@ -113,7 +113,7 @@ class SwipeableFlatList extends React.Component {
     const key = this.props.keyExtractor(info.item, info.index);
     // disabled swipe card
     const disabled = false;
-    // If renderQuickActions is unspecified or returns falsey, don't allow swipe
+    // If renderQuickActions is unspecified or returns false, don't allow swipe
     if (!slideoutView) {
       return this.props.renderItem(info);
     }
